@@ -1,0 +1,5 @@
+import 'package:equatable/equatable.dart';import 'package:flutter/material.dart';import '/core/app_export.dart';import '../models/listellipseseven3_item_model.dart';import 'package:basri_s_application9/presentation/organisation_hierarchy_screen/models/organisation_hierarchy_model.dart';part 'organisation_hierarchy_event.dart';part 'organisation_hierarchy_state.dart';class OrganisationHierarchyBloc extends Bloc<OrganisationHierarchyEvent, OrganisationHierarchyState> {OrganisationHierarchyBloc(OrganisationHierarchyState initialState) : super(initialState) { on<OrganisationHierarchyInitialEvent>(_onInitialize); }
+
+_onInitialize(OrganisationHierarchyInitialEvent event, Emitter<OrganisationHierarchyState> emit, ) async  { emit(state.copyWith(organisationHierarchyModelObj: state.organisationHierarchyModelObj?.copyWith(listellipseseven3ItemList: fillListellipseseven3ItemList()))); } 
+List<Listellipseseven3ItemModel> fillListellipseseven3ItemList() { return List.generate(5, (index) => Listellipseseven3ItemModel()); } 
+ }

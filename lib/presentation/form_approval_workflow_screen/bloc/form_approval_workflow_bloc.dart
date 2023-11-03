@@ -1,0 +1,5 @@
+import 'package:equatable/equatable.dart';import 'package:flutter/material.dart';import '/core/app_export.dart';import '../models/listellipseseven1_item_model.dart';import 'package:basri_s_application9/presentation/form_approval_workflow_screen/models/form_approval_workflow_model.dart';part 'form_approval_workflow_event.dart';part 'form_approval_workflow_state.dart';class FormApprovalWorkflowBloc extends Bloc<FormApprovalWorkflowEvent, FormApprovalWorkflowState> {FormApprovalWorkflowBloc(FormApprovalWorkflowState initialState) : super(initialState) { on<FormApprovalWorkflowInitialEvent>(_onInitialize); }
+
+_onInitialize(FormApprovalWorkflowInitialEvent event, Emitter<FormApprovalWorkflowState> emit, ) async  { emit(state.copyWith(formApprovalWorkflowModelObj: state.formApprovalWorkflowModelObj?.copyWith(listellipseseven1ItemList: fillListellipseseven1ItemList()))); } 
+List<Listellipseseven1ItemModel> fillListellipseseven1ItemList() { return List.generate(6, (index) => Listellipseseven1ItemModel()); } 
+ }

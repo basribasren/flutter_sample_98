@@ -1,0 +1,3 @@
+class ListpriceItemModel {String? id = "";
+
+ }

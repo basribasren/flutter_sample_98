@@ -1,0 +1,6 @@
+import 'package:equatable/equatable.dart';import 'package:flutter/material.dart';import '/core/app_export.dart';import '../models/listdecorationlights_item_model.dart';import '../models/listproductname_item_model.dart';import 'package:basri_s_application9/presentation/coupon_code_generator_screen/models/coupon_code_generator_model.dart';part 'coupon_code_generator_event.dart';part 'coupon_code_generator_state.dart';class CouponCodeGeneratorBloc extends Bloc<CouponCodeGeneratorEvent, CouponCodeGeneratorState> {CouponCodeGeneratorBloc(CouponCodeGeneratorState initialState) : super(initialState) { on<CouponCodeGeneratorInitialEvent>(_onInitialize); }
+
+List<ListdecorationlightsItemModel> fillListdecorationlightsItemList() { return List.generate(5, (index) => ListdecorationlightsItemModel()); } 
+List<ListproductnameItemModel> fillListproductnameItemList() { return List.generate(2, (index) => ListproductnameItemModel()); } 
+_onInitialize(CouponCodeGeneratorInitialEvent event, Emitter<CouponCodeGeneratorState> emit, ) async  { emit(state.copyWith(group9694Controller: TextEditingController())); emit(state.copyWith(couponCodeGeneratorModelObj: state.couponCodeGeneratorModelObj?.copyWith(listdecorationlightsItemList: fillListdecorationlightsItemList(), listproductnameItemList: fillListproductnameItemList()))); } 
+ }

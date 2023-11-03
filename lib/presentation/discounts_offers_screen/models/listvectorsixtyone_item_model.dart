@@ -1,0 +1,3 @@
+class ListvectorsixtyoneItemModel {String? id = "";
+
+ }

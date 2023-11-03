@@ -1,0 +1,4 @@
+import 'package:equatable/equatable.dart';import 'package:flutter/material.dart';import '/core/app_export.dart';import 'package:basri_s_application9/presentation/product_recommendation_engine_screen/models/product_recommendation_engine_model.dart';part 'product_recommendation_engine_event.dart';part 'product_recommendation_engine_state.dart';class ProductRecommendationEngineBloc extends Bloc<ProductRecommendationEngineEvent, ProductRecommendationEngineState> {ProductRecommendationEngineBloc(ProductRecommendationEngineState initialState) : super(initialState) { on<ProductRecommendationEngineInitialEvent>(_onInitialize); }
+
+_onInitialize(ProductRecommendationEngineInitialEvent event, Emitter<ProductRecommendationEngineState> emit, ) async  { emit(state.copyWith(group916Controller: TextEditingController(), group918Controller: TextEditingController(), group920Controller: TextEditingController())); } 
+ }

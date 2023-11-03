@@ -1,0 +1,8 @@
+import 'package:equatable/equatable.dart';import 'package:flutter/material.dart';import '/core/app_export.dart';import '../models/listtotalvisits_item_model.dart';import '../models/listten_item_model.dart';import 'package:basri_s_application9/presentation/customisable_user_subscriptions_screen/models/customisable_user_subscriptions_model.dart';part 'customisable_user_subscriptions_event.dart';part 'customisable_user_subscriptions_state.dart';class CustomisableUserSubscriptionsBloc extends Bloc<CustomisableUserSubscriptionsEvent, CustomisableUserSubscriptionsState> {CustomisableUserSubscriptionsBloc(CustomisableUserSubscriptionsState initialState) : super(initialState) { on<CustomisableUserSubscriptionsInitialEvent>(_onInitialize); on<ChangeRadioButtonEvent>(_changeRadioButton); on<ChangeCheckBoxEvent>(_changeCheckBox); }
+
+_changeRadioButton(ChangeRadioButtonEvent event, Emitter<CustomisableUserSubscriptionsState> emit, ) { emit(state.copyWith(radioGroup: event.value)); } 
+_changeCheckBox(ChangeCheckBoxEvent event, Emitter<CustomisableUserSubscriptionsState> emit, ) { emit(state.copyWith(isCheckbox: event.value)); } 
+List<ListtotalvisitsItemModel> fillListtotalvisitsItemList() { return List.generate(2, (index) => ListtotalvisitsItemModel()); } 
+List<ListtenItemModel> fillListtenItemList() { return List.generate(2, (index) => ListtenItemModel()); } 
+_onInitialize(CustomisableUserSubscriptionsInitialEvent event, Emitter<CustomisableUserSubscriptionsState> emit, ) async  { emit(state.copyWith(radioGroup: "", isCheckbox: false)); emit(state.copyWith(customisableUserSubscriptionsModelObj: state.customisableUserSubscriptionsModelObj?.copyWith(listtotalvisitsItemList: fillListtotalvisitsItemList(), listtenItemList: fillListtenItemList()))); } 
+ }

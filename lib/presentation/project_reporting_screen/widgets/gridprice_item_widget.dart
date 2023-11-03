@@ -1,0 +1,54 @@
+import '../models/gridprice_item_model.dart';
+import 'package:basri_s_application9/core/app_export.dart';
+import 'package:flutter/material.dart';
+
+// ignore: must_be_immutable
+class GridpriceItemWidget extends StatelessWidget {
+  GridpriceItemWidget(this.gridpriceItemModelObj);
+
+  GridpriceItemModel gridpriceItemModelObj;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: getPadding(
+        left: 16,
+        top: 10,
+        right: 16,
+        bottom: 10,
+      ),
+      decoration: AppDecoration.outlineGray700261.copyWith(
+        borderRadius: BorderRadiusStyle.roundedBorder6,
+      ),
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.end,
+        children: [
+          Padding(
+            padding: getPadding(
+              top: 11,
+            ),
+            child: Text(
+              gridpriceItemModelObj.priceTxt,
+              overflow: TextOverflow.ellipsis,
+              textAlign: TextAlign.left,
+              style: AppStyle.txtGilroySemiBold28BlueA700,
+            ),
+          ),
+          Padding(
+            padding: getPadding(
+              top: 18,
+            ),
+            child: Text(
+              gridpriceItemModelObj.monthTxt,
+              overflow: TextOverflow.ellipsis,
+              textAlign: TextAlign.left,
+              style: AppStyle.txtGilroyMedium16Black900,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}

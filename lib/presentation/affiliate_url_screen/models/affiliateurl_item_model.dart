@@ -1,0 +1,3 @@
+class AffiliateurlItemModel {String? id = "";
+
+ }

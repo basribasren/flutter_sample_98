@@ -1,0 +1,5 @@
+import 'package:equatable/equatable.dart';import 'package:flutter/material.dart';import '/core/app_export.dart';import '../models/listprofileimglarge12_item_model.dart';import 'package:basri_s_application9/presentation/self_destruct_messaging_screen/models/self_destruct_messaging_model.dart';part 'self_destruct_messaging_event.dart';part 'self_destruct_messaging_state.dart';class SelfDestructMessagingBloc extends Bloc<SelfDestructMessagingEvent, SelfDestructMessagingState> {SelfDestructMessagingBloc(SelfDestructMessagingState initialState) : super(initialState) { on<SelfDestructMessagingInitialEvent>(_onInitialize); }
+
+List<Listprofileimglarge12ItemModel> fillListprofileimglarge12ItemList() { return List.generate(5, (index) => Listprofileimglarge12ItemModel()); } 
+_onInitialize(SelfDestructMessagingInitialEvent event, Emitter<SelfDestructMessagingState> emit, ) async  { emit(state.copyWith(group3646Controller: TextEditingController())); emit(state.copyWith(selfDestructMessagingModelObj: state.selfDestructMessagingModelObj?.copyWith(listprofileimglarge12ItemList: fillListprofileimglarge12ItemList()))); } 
+ }
