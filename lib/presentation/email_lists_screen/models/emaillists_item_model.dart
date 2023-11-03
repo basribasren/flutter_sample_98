@@ -1,0 +1,3 @@
+class EmaillistsItemModel {String? id = "";
+
+ }

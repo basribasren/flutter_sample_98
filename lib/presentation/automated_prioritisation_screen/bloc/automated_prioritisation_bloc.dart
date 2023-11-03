@@ -1,0 +1,5 @@
+import 'package:equatable/equatable.dart';import 'package:flutter/material.dart';import '/core/app_export.dart';import '../models/listbrainstorming_item_model.dart';import 'package:basri_s_application9/presentation/automated_prioritisation_screen/models/automated_prioritisation_model.dart';part 'automated_prioritisation_event.dart';part 'automated_prioritisation_state.dart';class AutomatedPrioritisationBloc extends Bloc<AutomatedPrioritisationEvent, AutomatedPrioritisationState> {AutomatedPrioritisationBloc(AutomatedPrioritisationState initialState) : super(initialState) { on<AutomatedPrioritisationInitialEvent>(_onInitialize); }
+
+_onInitialize(AutomatedPrioritisationInitialEvent event, Emitter<AutomatedPrioritisationState> emit, ) async  { emit(state.copyWith(automatedPrioritisationModelObj: state.automatedPrioritisationModelObj?.copyWith(listbrainstormingItemList: fillListbrainstormingItemList()))); } 
+List<ListbrainstormingItemModel> fillListbrainstormingItemList() { return List.generate(6, (index) => ListbrainstormingItemModel()); } 
+ }

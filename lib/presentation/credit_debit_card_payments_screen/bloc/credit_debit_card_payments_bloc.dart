@@ -1,0 +1,5 @@
+import 'package:equatable/equatable.dart';import 'package:flutter/material.dart';import '/core/app_export.dart';import 'package:basri_s_application9/presentation/credit_debit_card_payments_screen/models/credit_debit_card_payments_model.dart';part 'credit_debit_card_payments_event.dart';part 'credit_debit_card_payments_state.dart';class CreditDebitCardPaymentsBloc extends Bloc<CreditDebitCardPaymentsEvent, CreditDebitCardPaymentsState> {CreditDebitCardPaymentsBloc(CreditDebitCardPaymentsState initialState) : super(initialState) { on<CreditDebitCardPaymentsInitialEvent>(_onInitialize); on<ChangeRadioButtonEvent>(_changeRadioButton); }
+
+_changeRadioButton(ChangeRadioButtonEvent event, Emitter<CreditDebitCardPaymentsState> emit, ) { emit(state.copyWith(radioGroup: event.value)); } 
+_onInitialize(CreditDebitCardPaymentsInitialEvent event, Emitter<CreditDebitCardPaymentsState> emit, ) async  { emit(state.copyWith(frame9976Controller: TextEditingController(), frame9977Controller: TextEditingController(), inputFieldController: TextEditingController(), inputFieldOneController: TextEditingController(), priceTwoController: TextEditingController(), radioGroup: "")); } 
+ }

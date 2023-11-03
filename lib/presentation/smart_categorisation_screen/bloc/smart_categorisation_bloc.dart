@@ -1,0 +1,6 @@
+import 'package:equatable/equatable.dart';import 'package:flutter/material.dart';import '/core/app_export.dart';import '../models/listrectangle1312_item_model.dart';import '../models/listunsplashfr2iwkpsiy_item_model.dart';import 'package:basri_s_application9/presentation/smart_categorisation_screen/models/smart_categorisation_model.dart';part 'smart_categorisation_event.dart';part 'smart_categorisation_state.dart';class SmartCategorisationBloc extends Bloc<SmartCategorisationEvent, SmartCategorisationState> {SmartCategorisationBloc(SmartCategorisationState initialState) : super(initialState) { on<SmartCategorisationInitialEvent>(_onInitialize); }
+
+_onInitialize(SmartCategorisationInitialEvent event, Emitter<SmartCategorisationState> emit, ) async  { emit(state.copyWith(smartCategorisationModelObj: state.smartCategorisationModelObj?.copyWith(listrectangle1312ItemList: fillListrectangle1312ItemList(), listunsplashfr2iwkpsiyItemList: fillListunsplashfr2iwkpsiyItemList()))); } 
+List<Listrectangle1312ItemModel> fillListrectangle1312ItemList() { return List.generate(3, (index) => Listrectangle1312ItemModel()); } 
+List<Listunsplashfr2iwkpsiyItemModel> fillListunsplashfr2iwkpsiyItemList() { return List.generate(5, (index) => Listunsplashfr2iwkpsiyItemModel()); } 
+ }

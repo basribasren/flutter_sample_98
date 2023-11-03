@@ -1,0 +1,5 @@
+import 'package:equatable/equatable.dart';import 'package:flutter/material.dart';import '/core/app_export.dart';import '../models/listlock_item_model.dart';import 'package:basri_s_application9/presentation/multiple_currency_support_screen/models/multiple_currency_support_model.dart';part 'multiple_currency_support_event.dart';part 'multiple_currency_support_state.dart';class MultipleCurrencySupportBloc extends Bloc<MultipleCurrencySupportEvent, MultipleCurrencySupportState> {MultipleCurrencySupportBloc(MultipleCurrencySupportState initialState) : super(initialState) { on<MultipleCurrencySupportInitialEvent>(_onInitialize); }
+
+_onInitialize(MultipleCurrencySupportInitialEvent event, Emitter<MultipleCurrencySupportState> emit, ) async  { emit(state.copyWith(multipleCurrencySupportModelObj: state.multipleCurrencySupportModelObj?.copyWith(listlockItemList: fillListlockItemList()))); } 
+List<ListlockItemModel> fillListlockItemList() { return List.generate(2, (index) => ListlockItemModel()); } 
+ }

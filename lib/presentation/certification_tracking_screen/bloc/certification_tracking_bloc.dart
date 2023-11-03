@@ -1,0 +1,5 @@
+import 'package:equatable/equatable.dart';import 'package:flutter/material.dart';import '/core/app_export.dart';import '../models/listellipseseven_item_model.dart';import 'package:basri_s_application9/presentation/certification_tracking_screen/models/certification_tracking_model.dart';part 'certification_tracking_event.dart';part 'certification_tracking_state.dart';class CertificationTrackingBloc extends Bloc<CertificationTrackingEvent, CertificationTrackingState> {CertificationTrackingBloc(CertificationTrackingState initialState) : super(initialState) { on<CertificationTrackingInitialEvent>(_onInitialize); }
+
+_onInitialize(CertificationTrackingInitialEvent event, Emitter<CertificationTrackingState> emit, ) async  { emit(state.copyWith(certificationTrackingModelObj: state.certificationTrackingModelObj?.copyWith(listellipsesevenItemList: fillListellipsesevenItemList()))); } 
+List<ListellipsesevenItemModel> fillListellipsesevenItemList() { return List.generate(5, (index) => ListellipsesevenItemModel()); } 
+ }

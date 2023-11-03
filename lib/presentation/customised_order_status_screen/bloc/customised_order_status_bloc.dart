@@ -1,0 +1,5 @@
+import 'package:equatable/equatable.dart';import 'package:flutter/material.dart';import '/core/app_export.dart';import '../models/listunsplashenrurz62wui_item_model.dart';import 'package:basri_s_application9/presentation/customised_order_status_screen/models/customised_order_status_model.dart';part 'customised_order_status_event.dart';part 'customised_order_status_state.dart';class CustomisedOrderStatusBloc extends Bloc<CustomisedOrderStatusEvent, CustomisedOrderStatusState> {CustomisedOrderStatusBloc(CustomisedOrderStatusState initialState) : super(initialState) { on<CustomisedOrderStatusInitialEvent>(_onInitialize); }
+
+_onInitialize(CustomisedOrderStatusInitialEvent event, Emitter<CustomisedOrderStatusState> emit, ) async  { emit(state.copyWith(customisedOrderStatusModelObj: state.customisedOrderStatusModelObj?.copyWith(listunsplashenrurz62wuiItemList: fillListunsplashenrurz62wuiItemList()))); } 
+List<Listunsplashenrurz62wuiItemModel> fillListunsplashenrurz62wuiItemList() { return List.generate(2, (index) => Listunsplashenrurz62wuiItemModel()); } 
+ }

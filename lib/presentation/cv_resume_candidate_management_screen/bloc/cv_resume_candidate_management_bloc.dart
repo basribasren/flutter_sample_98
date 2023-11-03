@@ -1,0 +1,6 @@
+import 'package:equatable/equatable.dart';import 'package:flutter/material.dart';import '/core/app_export.dart';import '../models/listjobtitle_item_model.dart';import '../models/listuniversityoftoronto_item_model.dart';import 'package:basri_s_application9/presentation/cv_resume_candidate_management_screen/models/cv_resume_candidate_management_model.dart';part 'cv_resume_candidate_management_event.dart';part 'cv_resume_candidate_management_state.dart';class CvResumeCandidateManagementBloc extends Bloc<CvResumeCandidateManagementEvent, CvResumeCandidateManagementState> {CvResumeCandidateManagementBloc(CvResumeCandidateManagementState initialState) : super(initialState) { on<CvResumeCandidateManagementInitialEvent>(_onInitialize); }
+
+_onInitialize(CvResumeCandidateManagementInitialEvent event, Emitter<CvResumeCandidateManagementState> emit, ) async  { emit(state.copyWith(cvResumeCandidateManagementModelObj: state.cvResumeCandidateManagementModelObj?.copyWith(listjobtitleItemList: fillListjobtitleItemList(), listuniversityoftorontoItemList: fillListuniversityoftorontoItemList()))); } 
+List<ListjobtitleItemModel> fillListjobtitleItemList() { return List.generate(2, (index) => ListjobtitleItemModel()); } 
+List<ListuniversityoftorontoItemModel> fillListuniversityoftorontoItemList() { return List.generate(2, (index) => ListuniversityoftorontoItemModel()); } 
+ }
